@@ -57,7 +57,7 @@ if (pinAnswer.pin === myPin) {
       let fastCashAns = await inquirer.prompt([
         {
           name: "fastCash",
-          message: "enter your amount",
+          message: "please select your Amount",
           type: "list",
           choices: [1000, 5000, 10000,20000],
         },

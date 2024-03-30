@@ -1,7 +1,7 @@
 {
   "name": "shehreen01_my_atm_machine",
   "version": "1.0.0",
-  "description": "This is a ATM Machine.",
+  "description": "This is a ATM Machine. In this user can withdraw and can check balance.",
   "main": "index.js",
   "type": "module",
   "bin": "index.js",
