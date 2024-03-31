@@ -32,7 +32,7 @@ if (pinAnswer.pin === myPin) {
     let choseAns = await inquirer.prompt([
       {
         name: "chose",
-        message: chalk.cyanBright("Select your Transaction Method"),
+        message: chalk.cyan("Select your Transaction Method"),
         type: "list",
         choices: ["Enter Amount", "Fast Cash"],
       },
@@ -41,15 +41,17 @@ if (pinAnswer.pin === myPin) {
       let amountAns = await inquirer.prompt([
         {
           name: "amount",
-          message: chalk.cyanBright("Enter The Amount you Want to Withdraw"),
+          message: chalk.yellowBright("Enter The Amount you Want to Withdraw"),
           type: "number",
         },
       ]);
-      myBalance -= amountAns.amount;
-      if (amountAns.amount >= myBalance) {
-        console.log(chalk.red.bold("your balance is insufficient "));
+     // myBalance -= amountAns.amount;
+      if (amountAns.amount <= myBalance && amountAns.amount >= myBalance) {
+        myBalance -= amountAns.amount;
+        console.log(chalk.green(`your current balance is: ${myBalance}`))
       } else {
-        console.log(chalk.green(`your current balance is: ${myBalance}`));
+        //console.log(chalk.green(`your current balance is: ${myBalance}`));
+        console.log(chalk.red.bold("your current balance is insufficient ! "));
       }
     }
     //
@@ -62,8 +64,9 @@ if (pinAnswer.pin === myPin) {
           choices: [1000, 5000, 10000,20000],
         },
       ]);
-      myBalance -= fastCashAns.fastCash;
+      //myBalance -= fastCashAns.fastCash;
       if (fastCashAns.fastCash >= myBalance) {
+        myBalance -= fastCashAns.fastCash;
         console.log(chalk.red.bold("your current balance is insufficient ! "));
       } else {
         console.log(chalk.green.dim(`your remainig balance is: ${myBalance}`));
