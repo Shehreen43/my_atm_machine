@@ -38,13 +38,11 @@ if (pinAnswer.pin === myPin) {
                     type: "number",
                 },
             ]);
-            // myBalance -= amountAns.amount;
             if (amountAns.amount <= myBalance && amountAns.amount >= 500) {
                 myBalance -= amountAns.amount;
                 console.log(chalk.green(`your current balance is: ${myBalance}`));
             }
             else {
-                //console.log(chalk.green(`your current balance is: ${myBalance}`));
                 console.log(chalk.red.bold("your current balance is insufficient ! "));
             }
         }
@@ -58,8 +56,7 @@ if (pinAnswer.pin === myPin) {
                     choices: [1000, 5000, 10000, 20000],
                 },
             ]);
-            //myBalance -= fastCashAns.fastCash;
-            if (fastCashAns.fastCash >= myBalance) {
+            if (fastCashAns.fastCash >= myBalance && fastCashAns.fastCash >= 500) {
                 myBalance -= fastCashAns.fastCash;
                 console.log(chalk.red.bold("your current balance is insufficient ! "));
             }

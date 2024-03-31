@@ -45,12 +45,11 @@ if (pinAnswer.pin === myPin) {
           type: "number",
         },
       ]);
-     // myBalance -= amountAns.amount;
-      if (amountAns.amount <= myBalance && amountAns.amount >= myBalance) {
+
+      if (amountAns.amount <= myBalance && amountAns.amount >= 500) {
         myBalance -= amountAns.amount;
-        console.log(chalk.green(`your current balance is: ${myBalance}`))
+        console.log(chalk.green(`your current balance is: ${myBalance}`));
       } else {
-        //console.log(chalk.green(`your current balance is: ${myBalance}`));
         console.log(chalk.red.bold("your current balance is insufficient ! "));
       }
     }
@@ -61,11 +60,11 @@ if (pinAnswer.pin === myPin) {
           name: "fastCash",
           message: "please select your Amount",
           type: "list",
-          choices: [1000, 5000, 10000,20000],
+          choices: [1000, 5000, 10000, 20000],
         },
       ]);
-      //myBalance -= fastCashAns.fastCash;
-      if (fastCashAns.fastCash >= myBalance) {
+
+      if (fastCashAns.fastCash >= myBalance && fastCashAns.fastCash >= 500) {
         myBalance -= fastCashAns.fastCash;
         console.log(chalk.red.bold("your current balance is insufficient ! "));
       } else {
@@ -79,6 +78,3 @@ if (pinAnswer.pin === myPin) {
 } else {
   console.log(chalk.redBright.underline("Incorrect pin code"));
 }
-
-
-
